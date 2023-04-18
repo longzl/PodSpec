@@ -23,17 +23,17 @@ Pod::Spec.new do |s|
   # end
 
   s.subspec 'Debug' do |ss|
-    # ss.source_files = 'extension/**/*.*'
+    ss.source_files = 'extension/**/*.*'
     ss.resource = 'Debug/builtin'
     ss.ios.vendored_frameworks = 'Debug/CAPKit.framework'
-    # ss.pod_target_xcconfig = { "HEADER_SEARCH_PATHS" => "Debug/CAPKit.framework" }
+    ss.pod_target_xcconfig = { "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES" => "YES" }
   end
 
   s.dependency 'DTCoreText', '~> 1.6.12'
   s.dependency 'TouchJSON', '~> 1.1'
   s.dependency 'ASIHTTPRequest', '~> 1.8.2'
   s.dependency 'FMDB/FTS', '~> 2.6.2'
-  # s.dependency 'Reachability', '~> 3.1.1'
+  s.dependency 'Reachability', '~> 3.1.1'
   s.dependency 'ZipArchive', '~> 1.4.0'
   s.dependency 'UIDevice-Hardware', '~> 0.1.3'
   s.dependency 'NSData+Base64', '~> 1.0.0'
